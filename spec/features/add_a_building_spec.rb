@@ -22,11 +22,11 @@ feature 'add a building', %Q{
 		fill_in 'Street Address', with: '5 Apple Street'
 		fill_in 'City', with: 'Boston'
 		fill_in 'State', with: 'Massachusetts'
-		fill_in 'Postal Code', with: 02215
+		fill_in 'Postal code', with: 02215
 
 		click_button 'Submit'
-		expect(page).to have_content("You've entered a record successfully")
+		expect(page).to have_content("New building entered")
 		expect(Building.count).to eql(prev_count + 1)
 	end
-	scenario 'does not record an invalid entry'
+	# scenario 'does not record an invalid entry'
 end

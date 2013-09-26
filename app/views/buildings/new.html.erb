@@ -1,0 +1,11 @@
+<%= simple_form_for(@building) do |f| %>
+
+<%= f.error_notification %>
+<%= f.input :street_address, :placeholder => "Street Address" %>
+<%= f.input :city, :placeholder => "City" %>
+<%= f.input :state, :placeholder => "State" %>
+<%= f.input :postal_code, :placeholder => 02215 %>
+
+<%= f.submit "Submit" %>
+
+<%- end -%>
