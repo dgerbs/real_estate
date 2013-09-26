@@ -27,6 +27,7 @@ feature 'add an owner', %Q{
 			click_button 'Submit'
 			expect(page).to have_content('Owner created')
 			expect(Owner.count).to eql(prev_count + 1)
+			expect(Owner.last.company).to_not be_nil
 		end
 		scenario 'specify invalid owner' do
 			prev_count = Owner.count
