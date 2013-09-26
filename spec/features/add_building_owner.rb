@@ -19,8 +19,8 @@ feature 'add an owner', %Q{
 			prev_count = Owner.count
 
 			visit new_owner_path
-			fill_in 'first_name', with: "John"
-			fill_in 'last_name', with: "Smith"
+			fill_in 'first name', with: "John"
+			fill_in 'last name', with: "Smith"
 			fill_in 'email address', with: "user@example.com"
 			select company_name, from: "Company"
 
