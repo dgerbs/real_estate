@@ -10,7 +10,7 @@ describe Building do
 	it { should have_valid(:state).when('Massachusetts') }
 	it { should_not have_valid(:state).when(nil, '') }
 
-	it { should have_valid(:postal_code).when('02215') }
+	it { should have_valid(:postal_code).when(02215) }
 	it { should_not have_valid(:postal_code).when(nil, '') }
 
 	it { should have_one(:owner) }

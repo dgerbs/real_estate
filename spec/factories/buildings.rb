@@ -5,6 +5,6 @@ FactoryGirl.define do
     street_address "MyString"
     city "MyString"
     state "MyString"
-    postal_code "02215"
+    postal_code 02215
   end
 end

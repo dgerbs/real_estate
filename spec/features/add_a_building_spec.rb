@@ -24,7 +24,7 @@ feature 'add a building', %Q{
 		fill_in 'Street Address', with: '5 Apple Street'
 		fill_in 'City', with: 'Boston'
 		fill_in 'State', with: 'Massachusetts'
-		fill_in 'Postal code', with: '02215'
+		fill_in 'Postal code', with: 02215
 		select owner, from: 'Owner'
 
 		click_button 'Submit'
