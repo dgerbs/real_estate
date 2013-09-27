@@ -17,13 +17,15 @@ feature 'add a building', %Q{
 # Upon successfully creating a building, I am redirected so that I can record another building.
 
 	scenario 'records a valid building entry' do
+		owner = FactoryGirl.create(:owner)
 		prev_count = Building.count
 
 		visit new_building_url
 		fill_in 'Street Address', with: '5 Apple Street'
 		fill_in 'City', with: 'Boston'
 		fill_in 'State', with: 'Massachusetts'
-		fill_in 'Postal code', with: 02215
+		fill_in 'Postal code', with: '02215'
+		select owner, from: 'Owner'
 
 		click_button 'Submit'
 		expect(page).to have_content("New building entered")

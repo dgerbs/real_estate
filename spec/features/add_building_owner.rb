@@ -18,7 +18,7 @@ feature 'add an owner', %Q{
 			FactoryGirl.create(:company, name: company_name)
 			prev_count = Owner.count
 
-			visit new_owner_path
+			visit new_owner_url
 			fill_in 'first name', with: "John"
 			fill_in 'last name', with: "Smith"
 			fill_in 'email address', with: "user@example.com"

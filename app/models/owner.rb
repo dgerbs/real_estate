@@ -3,6 +3,6 @@ class Owner < ActiveRecord::Base
 	validates_presence_of :last_name
 	validates_presence_of :email_address
 
-	belongs_to :company,
-		inverse_of: :owners
+	belongs_to :company
+	belongs_to :building
 end
