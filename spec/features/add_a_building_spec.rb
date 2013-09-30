@@ -17,7 +17,7 @@ feature 'add a building', %Q{
 # Upon successfully creating a building, I am redirected so that I can record another building.
 
 	scenario 'records a valid building entry' do
-		owner = FactoryGirl.create(:owner)
+		# owner = Owner.create(first_name: 'John', last_name: 'Smith', email_address: 'user@example.com')
 		prev_count = Building.count
 
 		visit new_building_url
@@ -25,7 +25,7 @@ feature 'add a building', %Q{
 		fill_in 'City', with: 'Boston'
 		fill_in 'State', with: 'Massachusetts'
 		fill_in 'Postal code', with: 02215
-		select owner, from: 'Owner'
+		select 'John', from: 'Owner'
 
 		click_button 'Submit'
 		expect(page).to have_content("New building entered")

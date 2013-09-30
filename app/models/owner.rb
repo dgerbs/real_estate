@@ -5,4 +5,8 @@ class Owner < ActiveRecord::Base
 
 	belongs_to :company
 	belongs_to :building
+
+	def name
+		first_name + ' ' + last_name
+	end
 end
