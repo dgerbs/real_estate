@@ -10,6 +10,6 @@ describe Owner do
 	it { should have_valid(:email_address).when('user@example.com') }
 	it { should_not have_valid(:email_address).when(nil, '') }
 
-	it { should belong_to(:building) }
+	it { should have_many(:buildings) }
 	it { should belong_to(:company) }
 end

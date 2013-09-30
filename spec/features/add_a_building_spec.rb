@@ -17,7 +17,7 @@ feature 'add a building', %Q{
 # Upon successfully creating a building, I am redirected so that I can record another building.
 
 	scenario 'records a valid building entry' do
-		# owner = Owner.create(first_name: 'John', last_name: 'Smith', email_address: 'user@example.com')
+		owner = Owner.create(first_name: 'John', last_name: 'Smith', email_address: 'user@example.com')
 		prev_count = Building.count
 
 		visit new_building_url

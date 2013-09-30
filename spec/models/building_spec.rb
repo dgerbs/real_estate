@@ -13,5 +13,5 @@ describe Building do
 	it { should have_valid(:postal_code).when(02215) }
 	it { should_not have_valid(:postal_code).when(nil, '') }
 
-	it { should have_one(:owner) }
+	it { should belong_to(:owner) }
 end
