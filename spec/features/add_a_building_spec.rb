@@ -11,11 +11,13 @@ feature 'add a building', %Q{
 # I must specify a street address, city, state, and postal code
 # Only US states can be specified
 # I can optionally specify a description of the building
+# I can optionally match an owner with a building
 # If I enter all of the required information in the required format, the building is recorded.
 # If I do not specify all of the required information in the required formats, the building is not recorded and I am presented with errors
 # Upon successfully creating a building, I am redirected so that I can record another building.
 
 	scenario 'records a valid building entry' do
+		owner = Owner.create(first_name: 'John', last_name: 'Smith', email_address: 'user@example.com')
 		prev_count = Building.count
 
 		visit new_building_url
@@ -23,6 +25,7 @@ feature 'add a building', %Q{
 		fill_in 'City', with: 'Boston'
 		fill_in 'State', with: 'Massachusetts'
 		fill_in 'Postal code', with: 02215
+		select 'John', from: 'Owner'
 
 		click_button 'Submit'
 		expect(page).to have_content("New building entered")

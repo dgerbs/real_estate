@@ -5,7 +5,11 @@
 <%= f.input :city, :placeholder => "City" %>
 <%= f.input :state, :placeholder => "State" %>
 <%= f.input :postal_code, :placeholder => 02215 %>
+<%= f.input :description, :placeholder => "Optional" %>
+<%= f.input :owner_id, collection: Owner.all, include_blank: false, prompt: "Choose one" %>
 
 <%= f.submit "Submit" %>
 
 <%- end -%>
+
+<p><%= link_to "Add Owner", new_owner_path(@owner) %></p>

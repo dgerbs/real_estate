@@ -1,0 +1,13 @@
+<%= simple_form_for(@owner) do |f| %>
+
+<%= f.error_notification %>
+<%= f.input :first_name, :placeholder => "First Name" %>
+<%= f.input :last_name, :placeholder => "Last Name" %>
+<%= f.input :email_address, :placeholder => "email" %>
+<%= f.input :company, collection: [ "Boston Real Estate" ], include_blank: false, prompt: "Choose one" %>
+
+<%= f.submit "Submit" %>
+
+<%- end -%>
+
+<p><%= link_to "New Building Form", new_building_path(@building) %></p>
